@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# To rebuild an image that is already running, you will have to uncomment the line below:
+# docker stop codePlatoon && docker rm codePlatoon && /
+
+docker build -t cpimage . && /
+docker run -it --name codePlatoon -v "$(pwd)":/usr/local/src/code_platoon -v "$(pwd)"/.bashrc:/root/.bashrc cpimage
