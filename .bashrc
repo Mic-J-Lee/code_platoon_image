@@ -4,9 +4,11 @@
 # Set git name and email
 git config --global user.name "Mona Lisa"
 git config --global user.email "email@example.com"
+
 # Keep username/password in memory for some number of seconds (28800 is 8 hours)
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=28800'
+
 
 # Jon's colors
 function parse_git_branch {
@@ -17,6 +19,7 @@ function git_branch {
 }
 export PS1="\[\e[36m\]\u\[\e[m\]@\[\e[32m\]\h:\[\e[33;1m\]\w\[\e[m\]\$(git_branch) $ "
 
+
 # Make `ls` colorized:
 export LS_OPTIONS='--color=auto'
 alias ls='ls $LS_OPTIONS'
@@ -25,8 +28,9 @@ alias ls='ls $LS_OPTIONS'
 # alias ll='ls $LS_OPTIONS -l'
 # alias l='ls $LS_OPTIONS -lA'
 
-# (re)Start postgresql server
+
+# To start postgresql server automatically, uncomment the line below:
 # service postgresql start
-# The line below needs to be run just once:
+# The line below needs to be run only once
 # su postgres -c "createuser -s root"
 
