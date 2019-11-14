@@ -1,5 +1,13 @@
 # /root/.bashrc: executed by bash(1) for non-login shells. Login shells use ~/.bash_profile
 
+
+# Set git name and email
+git config --global user.name "Mona Lisa"
+git config --global user.email "email@example.com"
+# Keep username/password in memory for some number of seconds (28800 is 8 hours)
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=28800'
+
 # Jon's colors
 function parse_git_branch {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
@@ -8,10 +16,6 @@ function git_branch {
   [[ $(parse_git_branch) != "" ]] && echo "($(parse_git_branch))"
 }
 export PS1="\[\e[36m\]\u\[\e[m\]@\[\e[32m\]\h:\[\e[33;1m\]\w\[\e[m\]\$(git_branch) $ "
-
-# Set git name and email
-git config --global user.name "Mona Lisa"
-git config --global user.email "email@example.com"
 
 # Make `ls` colorized:
 export LS_OPTIONS='--color=auto'
