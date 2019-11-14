@@ -5,10 +5,8 @@
 git config --global user.name "Mona Lisa"
 git config --global user.email "email@example.com"
 
-# Keep username/password in memory for some number of seconds (28800 is 8 hours)
-git config --global credential.helper cache
-git config --global credential.helper 'cache --timeout=28800'
-
+# Keep username/password stored in container
+git config --global credential.helper store
 
 # Jon's colors
 function parse_git_branch {
