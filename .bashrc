@@ -8,6 +8,7 @@ git config --global user.email "email@example.com"
 # Keep username/password stored in container
 git config --global credential.helper store
 
+
 # Jon's colors
 function parse_git_branch {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
