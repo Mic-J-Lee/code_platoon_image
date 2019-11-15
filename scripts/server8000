@@ -1,2 +1,2 @@
 #! /bin/bash
-docker run -it --rm --name server8000 -p 8000:8000 -v "$(pwd)":/usr/local/src/code_platoon -v "$(pwd)"/.bashrc:/root/.bashrc cpimage
+docker run -it --rm --name server8000 -p 8000:8000 -v "$(pwd)":/usr/local/src/code_platoon -v "$(pwd)"/.bashrc:/root/.bashrc codeplatoon/base

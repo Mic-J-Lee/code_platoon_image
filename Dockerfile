@@ -1,12 +1,13 @@
 FROM python:3.8.0-buster
 
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
+  curl https://cli-assets.heroku.com/install.sh | sh && \
   apt-get update && \
   apt-get install -y --no-install-recommends \
-    postgresql \
-    postgresql-client \
+    git \
     nodejs \
-    git
+    postgresql \
+    postgresql-client
 
 WORKDIR /usr/local/src/code_platoon
 
