@@ -1,0 +1,2 @@
+#! /bin/bash
+docker run -it --rm --name server3000 -p 3000:3000 -v "$(pwd)":/usr/local/src/code_platoon -v "$(pwd)"/.bashrc:/root/.bashrc codeplatoon/base
